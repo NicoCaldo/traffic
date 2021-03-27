@@ -21,8 +21,8 @@ $TC qdisc add dev $IF root handle 1:0 htb default 10
 $TC class add dev $IF parent 1:0 classid 1:10 htb rate $LIMIT
 $TC class add dev $IF parent 1:0 classid 1:30 htb rate $LIMIT
 
-$TC filter add dev $IF protocol ip parent 1:0 prio 1 u32 match ip dst 192.168.241.33 flowid 1:10
-$TC filter add dev $IF protocol ip parent 1:0 prio 1 u32 match ip dst 192.168.241.33 flowid 1:30
+$TC filter add dev $IF protocol ip parent 1:0 prio 1 u32 match ip dst 192.168.241.133 flowid 1:10
+$TC filter add dev $IF protocol ip parent 1:0 prio 1 u32 match ip dst 192.168.241.132 flowid 1:30
 
 echo "== SHAPING DONE =="
 }
